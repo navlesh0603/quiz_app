@@ -1,7 +1,10 @@
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage(this.screenSwitch,{super.key});
+
+  final void Function() screenSwitch;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class HomePage extends StatelessWidget {
             height: 30,
           ),
           OutlinedButton.icon(
-            onPressed: null,
+            onPressed: screenSwitch,
             icon: const Icon(
               Icons.arrow_right_alt,
               color: Color.fromARGB(255, 255, 255, 255),
